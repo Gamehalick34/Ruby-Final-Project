@@ -45,6 +45,7 @@ public class RubyController : MonoBehaviour
     AudioSource audioSource;
     public ParticleSystem particle;
     public ParticleSystem dmgEffect;
+    public ParticleSystem slowEffect;
 
     Animator animator;
     Vector2 lookDirection = new Vector2(1, 0);
@@ -180,6 +181,18 @@ public class RubyController : MonoBehaviour
     public void PlayEffect(ParticleSystem effect)
     {
         particle.Play(effect);
+    }
+
+    public void SlowEffect(ParticleSystem Seffect)
+    {
+        if(speed == 1.5f)
+        {
+            slowEffect.Play(Seffect);
+        }
+        else
+        {
+            slowEffect.Stop(Seffect);
+        }
     }
 
     public void fixRobotManager()

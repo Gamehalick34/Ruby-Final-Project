@@ -42,6 +42,14 @@ public class Projectile : MonoBehaviour
             RubyController.RFixed += 1;
         }
         Destroy(gameObject);
+        
+
+        SuperHardEnemy s = other.collider.GetComponent<SuperHardEnemy>();
+        if (s != null)
+        {
+            s.Fix();
+        }
+        Destroy(gameObject);
 
     }
 }

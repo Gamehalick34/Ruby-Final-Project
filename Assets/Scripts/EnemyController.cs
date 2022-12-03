@@ -7,6 +7,8 @@ public class EnemyController : MonoBehaviour
     public float speed;
     public bool vertical;
     public float changeTime = 3.0f;
+    public AudioSource Noise;
+    public AudioClip Repair;
 
     Rigidbody2D rigidbody2D;
     float timer;
@@ -24,6 +26,8 @@ public class EnemyController : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         timer = changeTime;
         animator = GetComponent<Animator>();
+
+        Noise = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -81,13 +85,18 @@ public class EnemyController : MonoBehaviour
 
     //Public because we want to call it from elsewhere like the projectile script
     public void Fix()
-    {
-
+    {  
         broken = false;
         rigidbody2D.simulated = false;
         //optional if you added the fixed animation
         animator.SetTrigger("Fixed");
         smokeEffect.Stop();
-
+        PlaySound(Repair);
     }
+
+    public void PlaySound(AudioClip clip)
+    {
+        Noise.PlayOneShot(clip);
+    }
+
 }

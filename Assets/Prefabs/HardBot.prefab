@@ -269,6 +269,7 @@ MonoBehaviour:
   vertical: 0
   changeTime: 3
   health: 2
+  Repair: {fileID: 8300000, guid: 3bda2bc0f13aaa84fbec3ced29472a0e, type: 3}
   smokeEffect: {fileID: 1612595950188618711}
 --- !u!1001 &3238803257310311343
 PrefabInstance:

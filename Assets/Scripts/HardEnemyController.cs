@@ -8,6 +8,8 @@ public class HardEnemyController : MonoBehaviour
     public bool vertical;
     public float changeTime = 3.0f;
     public int health = 2;
+    public AudioSource Noise;
+    public AudioClip Repair;
 
     Rigidbody2D rigidbody2D;
     float timer;
@@ -23,6 +25,8 @@ public class HardEnemyController : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         timer = changeTime;
         animator = GetComponent<Animator>();
+
+        Noise = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -86,5 +90,11 @@ public class HardEnemyController : MonoBehaviour
         //optional if you added the fixed animation
         animator.SetTrigger("Fixed");
         smokeEffect.Stop();
+        PlaySound(Repair);
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        Noise.PlayOneShot(clip);
     }
 }

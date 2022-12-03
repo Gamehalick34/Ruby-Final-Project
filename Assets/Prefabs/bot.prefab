@@ -152,6 +152,7 @@ MonoBehaviour:
   speed: 1
   vertical: 1
   changeTime: 5
+  Repair: {fileID: 8300000, guid: 3bda2bc0f13aaa84fbec3ced29472a0e, type: 3}
   smokeEffect: {fileID: 5634663926165525967}
 --- !u!95 &2608482625088896602
 Animator:

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 313620147}
   - component: {fileID: 313620146}
   m_Layer: 10
-  m_Name: Image
+  m_Name: JambiTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -463,3 +463,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayTime: 4
   dialogBox: {fileID: 313620144}
+  NextLevel: {fileID: 0}

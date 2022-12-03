@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AmmoStorage : MonoBehaviour
 {
+
+    public AudioClip collectedClip;
+
     void OnTriggerEnter2D(Collider2D other)
     {
         RubyController controller = other.GetComponent<RubyController>();
@@ -12,6 +15,8 @@ public class AmmoStorage : MonoBehaviour
         {
             controller.AmmoUp();
             Destroy(gameObject);
+
+            controller.PlaySound(collectedClip);
         }
     }
 
